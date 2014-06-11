@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<menu>
+	    <supplier translate="title" module="adminhtml">
+	        <title>Supplier</title>
+	        <sort_order>100</sort_order>
+	        <children>
+	            <new>
+	                <title>Add Supplier</title>
+	                <action>supplier_admin/adminhtml_supplier/add</action>
+	            </new>
+	        </children>
+	    </supplier>
+	</menu>
+</config>

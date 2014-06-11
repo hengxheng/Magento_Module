@@ -1,0 +1,42 @@
+<?php $suppliers = $this->listSuppliers(); ?>
+
+<div class="suppliers">
+<?php foreach($suppliers as $supplier): ?>
+  <div class="the_supplier" style="margin-top:20px;table">
+  <table>
+    <tr>
+      <td>Name</td>
+      <td><?php echo $supplier->getData('name'); ?></td>
+      <td>Website</td>
+      <td><?php echo $supplier->getData('website'); ?></td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td><?php echo $supplier->getData('email'); ?></td>
+      <td>Phone</td>
+      <td><?php echo $supplier->getData('phone'); ?></td>
+    </tr>
+    <tr>
+      <td>Address</td>
+      <td colspan="3"><?php echo $supplier->getData('address1'); ?><br/><?php echo $supplier->getData('address2'); ?></td>
+    </tr>
+    <tr>
+      <td>Suburb</td>
+      <td><?php echo $supplier->getData('suburb'); ?></td>
+      <td>Postcode</td>
+      <td><?php echo $supplier->getData('postcode'); ?></td>
+    </tr>
+    <tr>
+      <td>City</td>
+      <td><?php echo $supplier->getData('city'); ?></td>
+    </tr>
+  </table>
+  </div>
+<?php endforeach; ?>
+</div>
+<style>
+.the_supplier table tr td{
+  padding:10px 15px;
+  border:1px solid grey;
+}
+</style>

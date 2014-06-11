@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The root node for Magento module configuration -->
+<config> 
+    <modules>
+        <Eyedentity_Supplier>
+            <version>0.1.0</version>
+        </Eyedentity_Supplier>
+    </modules>
+
+    <frontend>
+        <routers>
+            <supplier>
+                <use>standard</use>
+                <args>
+                    <module>Eyedentity_Supplier</module>
+                    <frontName>sup</frontName>
+                </args>
+            </supplier>
+        </routers>
+
+        <layout>
+            <updates>
+                <supplier>
+                    <file>supplier.xml</file>
+                </supplier>
+            </updates>
+        </layout>
+    </frontend>
+
+    <admin>
+        <routers>
+            <supplier>
+                <use>admin</use>
+                <args>
+                    <module>Eyedentity_Supplier</module>
+                    <frontName>supplier_admin</frontName>
+                </args>
+            </supplier>
+        </routers>
+    </admin>
+
+    <adminhtml>
+        <layout>
+            <updates>
+                <supplier module="Eyedentity_Supplier">
+                    <file>supplier_admin.xml</file>
+                </supplier>
+            </updates>
+        </layout>
+        <menu>
+            <supplier translate="title" module="adminhtml">
+                <title>Supplier</title>
+                <sort_order>100</sort_order>
+                <children>
+<!--                     <set_time>
+                        <title>Add Supplier</title>
+                        <action>supplier_admin/adminhtml_supplier/add</action>
+                    </set_time> -->
+                    <list_supplier>
+                        <title>All Supplier</title>
+                        <action>supplier_admin/adminhtml_supplier/index</action>
+                    </list_supplier>
+                </children>
+            </supplier>
+        </menu>
+    </adminhtml>
+
+    <global>
+        <models>
+            <supplier>
+                <class>Eyedentity_Supplier_Model</class>
+                <resourceModel>supplier_mysql4</resourceModel>
+            </supplier>
+            <supplier_mysql4>
+                <class>Eyedentity_Supplier_Model_Mysql4</class>
+                <entities>
+                    <supplier>
+                        <table>eyedentity_supplier</table>
+                    </supplier>
+                </entities>
+            </supplier_mysql4>
+        </models>
+        
+        <resources>
+            <eyedentity_setup>
+                <setup>
+                    <module>Eyedentity_Supplier</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </eyedentity_setup>
+
+            <eyedentity_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </eyedentity_write>
+            <eyedentity_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </eyedentity_read>
+        </resources>
+
+        <blocks>
+            <supplier>
+                <class>Eyedentity_Supplier_Block</class>
+            </supplier>
+        </blocks>
+
+        <helpers>
+            <supplier>
+                <class>Eyedentity_Supplier_Helper</class>
+            </supplier>
+        </helpers>
+    </global>
+</config>

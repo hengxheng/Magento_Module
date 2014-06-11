@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<layout version="0.1.0">
+  <supplier_adminhtml_supplier_index>
+     <reference name="content">
+  			<!-- <block type="adminhtml/template"  name="list_supplier" template="supplier/test.phtml" /> -->
+			<block type="supplier/adminhtml_grid" name="grid" />
+      </reference>
+   </supplier_adminhtml_supplier_index>
+</layout>

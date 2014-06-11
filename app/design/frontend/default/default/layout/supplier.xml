@@ -1,0 +1,23 @@
+<layout version="0.1.0">
+     <default>
+          <reference name="content">
+          </reference>
+      </default>
+      <supplier_index_index>
+           <reference name="content">
+                <block type="supplier/list"  name="list_supplier" template="supplier/search-form.phtml"/>
+           </reference>
+      </supplier_index_index>
+
+      <supplier_index_search>
+      		<reference name="content">
+      			<block type="supplier/search" name="search_supplier" template="supplier/search-form.phtml"/>
+      		</reference>
+      </supplier_index_search>
+
+      <supplier_index_list>
+      		<reference name="content">
+      			<block type="supplier/list" name="list_supplier" template="supplier/list.phtml"/>
+      		</reference>
+      </supplier_index_list>
+</layout>
